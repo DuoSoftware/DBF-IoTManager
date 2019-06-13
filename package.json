@@ -1,0 +1,20 @@
+{
+  "name": "dbf-iotmanager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Kalana De Mel",
+  "license": "ISC",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.1",
+    "config": "^2.0.2",
+    "cors": "^2.8.4",
+    "dvp-common-lite": "^1.0.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "validator": "^10.9.0"
+  }
+}
