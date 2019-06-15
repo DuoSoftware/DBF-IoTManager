@@ -30,7 +30,7 @@ var device = awsIot.device({
 let OnlineSate = false;
 
 device.on('connect', function() {
-        console.log('connected to AWS');
+        //console.log('connected to AWS');
         device.subscribe('notifications/1');
         device.publish('notification/1', JSON.stringify({ 'AWS IoT Notification server': 1}));
         OnlineSate = true
@@ -57,7 +57,7 @@ device.on('reconnect', function() {
 
 module.exports.sendToTopic =  (req , res) => {
 
-    console.log("DBF-AWSIoTService sendToTopic");
+    //console.log("DBF-AWSIoTService sendToTopic");
 
     return new Promise(function(resolve, reject) {
 
@@ -81,14 +81,12 @@ module.exports.sendToTopic =  (req , res) => {
         }
     });
 
-
-
 };
 
 
 module.exports.wfexec =  async (req) => {
 
-    console.log("DBF-AWSIoTService wfexec");
+    //console.log("DBF-AWSIoTService wfexec");
     req.body.topic = `dashboard/sfexec/${req.body.partitionKey}`;
     return await send(req);
 
@@ -96,7 +94,7 @@ module.exports.wfexec =  async (req) => {
 
 module.exports.wfcreation =  async (req) => {
 
-    console.log("DBF-AWSIoTService wfexec");
+    //console.log("DBF-AWSIoTService wfcreation");
     req.body.topic = `dashboard/wfcreation/${req.body.partitionKey}`;
     return await send(req);
 
@@ -104,7 +102,7 @@ module.exports.wfcreation =  async (req) => {
 
 module.exports.sfchat =  async (req) => {
 
-    console.log("DBF-AWSIoTService wfexec");
+    //console.log("DBF-AWSIoTService sfchat");
     req.body.topic = `dashboard/sfchat/${req.body.partitionKey}`;
     return await send(req);
 
@@ -112,7 +110,7 @@ module.exports.sfchat =  async (req) => {
 
 module.exports.sfactiveaudience =  async (req) => {
 
-    console.log("DBF-AWSIoTService wfexec");
+    //console.log("DBF-AWSIoTService sfactiveaudience");
     req.body.topic = `dashboard/sfactiveaudience/${req.body.partitionKey}`;
     return await send(req);
 
