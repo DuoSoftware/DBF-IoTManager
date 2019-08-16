@@ -83,6 +83,13 @@ module.exports.sendToTopic =  (req , res) => {
 
 };
 
+module.exports.unhandledMessage =  async (req) => {
+
+    //console.log("DBF-AWSIoTService wfexec");
+    req.topic = `dashboard/unhandledmessage/${req.partitionKey}`;
+    return await send(req);
+
+};
 
 module.exports.wfexec =  async (req) => {
 

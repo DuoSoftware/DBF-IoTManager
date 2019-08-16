@@ -62,6 +62,14 @@ module.exports = {
         } catch(err) {
             return({IsSuccess : false, message :`Date-${Date.now()}-Workflow Execution failed `, exception :err });
         }
+    },
+    unhandledMessage : async function (req) {
+        try {
+            let value = await device.unhandledMessage(req);
+            return ({IsSuccess : true, message :`Success`, value :value });
+        } catch(err) {
+            return({IsSuccess : false, message :`Date-${Date.now()}-Workflow Execution failed `, exception :err });
+        }
     }
 
 
