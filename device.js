@@ -91,6 +91,14 @@ module.exports.unhandledMessage =  async (req) => {
 
 };
 
+module.exports.cartStatus =  async (req) => {
+
+    //console.log("DBF-AWSIoTService wfexec");
+    req.topic = `dashboard/cartstatus/${req.partitionKey}`;
+    return await send(req);
+
+};
+
 module.exports.wfexec =  async (req) => {
 
     //console.log("DBF-AWSIoTService wfexec");
@@ -170,8 +178,6 @@ function send(req)  {
             reject(OnlineSate)
         }
     });
-
-
 
 
 }

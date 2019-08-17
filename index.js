@@ -68,9 +68,17 @@ module.exports = {
             let value = await device.unhandledMessage(req);
             return ({IsSuccess : true, message :`Success`, value :value });
         } catch(err) {
-            return({IsSuccess : false, message :`Date-${Date.now()}-Workflow Execution failed `, exception :err });
+            return({IsSuccess : false, message :`Date-${Date.now()}-unhandledMessage update failed `, exception :err });
         }
+    },
+    cartStatus : async function (req) {
+    try {
+        let value = await device.cartStatus(req);
+        return ({IsSuccess : true, message :`Success`, value :value });
+    } catch(err) {
+        return({IsSuccess : false, message :`Date-${Date.now()}-cartStatus update failed `, exception :err });
     }
+}
 
 
 
