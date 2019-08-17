@@ -95,6 +95,11 @@ module.exports.cartStatus =  async (req) => {
 
     //console.log("DBF-AWSIoTService wfexec");
     req.topic = `dashboard/cartstatus/${req.partitionKey}`;
+    req.botid = req.partitionKey;
+    req.timestamp = (new Date).getTime();
+
+
+
     return await send(req);
 
 };
